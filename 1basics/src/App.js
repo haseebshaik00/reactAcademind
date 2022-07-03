@@ -1,5 +1,5 @@
 import './App.css';
-import Expenses from './components/Expenses';
+import Expenses from './components/Expenses/Expenses';
 
 function App() {
   const expense = [
@@ -28,6 +28,12 @@ function App() {
       <Expenses expense={expense} />
     </div>
   );
+
+  /*
+    The above return statement is equivalent to 
+      return (React.createElement('div', {}, React.createElement('Expenses', {expense: expense}));
+    This is the main reason why we wrap all the content inside a root element - div
+  */
 }
 
 export default App;

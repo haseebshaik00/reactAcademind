@@ -1,4 +1,4 @@
-import Card from './Card';
+import Card from '../UI/Card';
 import './ExpenseDate.css';
 
 export default function ExpenseDate(props){
