@@ -18,7 +18,7 @@ function App() {
     {
       id: 3,
       name: "House",
-      date: new Date(2022, 12, 12),
+      date: new Date(2022, 1, 12),
       price: 140
     }
   ]
