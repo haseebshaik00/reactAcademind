@@ -1,5 +1,6 @@
 import './App.css';
 import Expenses from './components/Expenses/Expenses';
+import NewExpense from './components/NewExpense/NewExpense';
 
 function App() {
   const expense = [
@@ -21,10 +22,17 @@ function App() {
       date: new Date(2022, 1, 12),
       price: 140
     }
-  ]
+  ];
+
+  const onFormSubmissionApp = (expenseData) => {
+      expense.push(expenseData);
+      console.log("hi");
+  }
+
   return (
     <div>
       <h1>FundX</h1>
+      <NewExpense onFormSubmissionApp={onFormSubmissionApp}/>
       <Expenses expense={expense} />
     </div>
   );
