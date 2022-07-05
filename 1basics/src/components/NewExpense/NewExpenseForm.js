@@ -10,31 +10,34 @@ export default function NewExpenseForm(props){
         inputDate: ''
     });
 
+    const newInputData = {
+        inputTitle: '',
+        inputPrice: '',
+        inputDate: ''
+    };
+
     const titleChangeHandler = (event) => {
-        setInputData((prevState) => {
-            return {
-                ...prevState,
-                inputTitle: event.target.value
-            }
-        });
+        newInputData.inputTitle= event.target.value;
+        newInputData.inputPrice = inputData.inputPrice;
+        newInputData.inputDate = inputData.inputDate;
+        console.log(newInputData);
+        setInputData(newInputData);
     }
 
     const priceChangeHandler = (event) => {
-        setInputData((prevState) => {
-            return {
-                ...prevState,
-                inputPrice: event.target.value
-            }
-        });
+        newInputData.inputPrice= event.target.value;
+        newInputData.inputTitle = inputData.inputTitle;
+        newInputData.inputDate = inputData.inputDate;
+        console.log(newInputData);
+        setInputData(newInputData);
     }
 
     const dateChangeHandler = (event) => {
-        setInputData((prevState) => {
-            return {
-                ...prevState,
-                inputDate: event.target.value
-            }
-        });
+        newInputData.inputDate= event.target.value;
+        newInputData.inputTitle = inputData.inputTitle;
+        newInputData.inputPrice = inputData.inputPrice;
+        console.log(newInputData);
+        setInputData(newInputData);
     }
 
     const submitHandler = (event) => {
@@ -42,7 +45,7 @@ export default function NewExpenseForm(props){
         const data = {
             expenseTitle: inputData.inputTitle,
             expensePrice: inputData.inputPrice,
-            expenseDate: inputData.inputDate
+            expenseDate: new Date(inputData.inputDate)
         }
         setInputData(() => {
             return {
@@ -52,6 +55,7 @@ export default function NewExpenseForm(props){
             }
         });
         props.onFormSubmission(data);
+        console.log(data);
     }
 
   return (

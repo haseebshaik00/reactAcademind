@@ -1,32 +1,52 @@
-import './App.css';
+import { useState } from 'react';
 import Expenses from './components/Expenses/Expenses';
 import NewExpense from './components/NewExpense/NewExpense';
 
+import './App.css';
+
 function App() {
-  const expense = [
+
+  const [expense, setNewExpense] = useState([
     {
-      id: 1,
-      name: "Car Insurance",
-      date: new Date(2022, 5, 4),
+      id:1,
+      name: 'haseeb',
+      date: new Date(2022, 5, 5),
       price: 100
-    },
-    {
-      id: 2,
-      name: "Laundry",
-      date: new Date(2022, 3, 10),
-      price: 133
-    },
-    {
-      id: 3,
-      name: "House",
-      date: new Date(2022, 1, 12),
-      price: 140
     }
-  ];
+  ]);
+  // const expense = [
+  //   {
+  //     id: 1,
+  //     name: "Car Insurance",
+  //     date: new Date(2022, 5, 4),
+  //     price: 100
+  //   },
+  //   {
+  //     id: 2,
+  //     name: "Laundry",
+  //     date: new Date(2022, 3, 10),
+  //     price: 133
+  //   },
+  //   {
+  //     id: 3,
+  //     name: "House",
+  //     date: new Date(2022, 1, 12),
+  //     price: 140
+  //   }
+  // ];
 
   const onFormSubmissionApp = (expenseData) => {
-      expense.push(expenseData);
-      console.log("hi");
+    const newExpenseApp = {
+      id: expenseData.id,
+      name: expenseData.expenseTitle,
+      date: expenseData.expenseDate,
+      price: expenseData.expensePrice
+    }
+      setNewExpense((prevState) => {
+        return [newExpenseApp, ...prevState];
+      });
+      console.log(newExpenseApp);
+      console.log(expense);
   }
 
   return (
