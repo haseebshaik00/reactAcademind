@@ -13,14 +13,15 @@ export default function ExpenseItem(props){
     }
 
     return(
-        <Card className="expense-item">
-            <ExpenseDate expenseDate={props.expenseDate}/>
-            <div className="expense-item__description">
-                <h2 className="boo">{title}</h2>
-                <div className="expense-item__price">$ {props.expensePrice}/-</div>
-            </div>
-            <button  onClick={titleHandler}>Click</button>
-        </Card>
+        <li>
+            <Card className="expense-item">
+                <ExpenseDate expenseDate={props.expenseDate}/>
+                    <div className="expense-item__description">
+                        <h2>{title}</h2>
+                        <div className="expense-item__price">$ {props.expensePrice}/-</div>
+                    </div>
+            </Card>
+        </li>
     );
 
 }
