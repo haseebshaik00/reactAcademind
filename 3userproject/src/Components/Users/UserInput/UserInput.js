@@ -1,3 +1,4 @@
+import Card from '../../UI/Card'
 import './UserInput.css'
 import { useState } from "react";
 
@@ -19,7 +20,7 @@ const UserInput = (props) => {
     }
 
     return(
-            <div>
+            <Card className='input'>
                     <form onSubmit={onSubmitHandler}>
                         <label>Name : </label>
                         <input type="text" value={name} onChange={onChangeName}/><br /><br />
@@ -27,7 +28,7 @@ const UserInput = (props) => {
                         <input type="number" value={age} onChange={onChangeAge}/><br /><br />
                         <button type="submit">SUBMIT</button>
                     </form>
-            </div>
+            </Card>
 
     );
 };

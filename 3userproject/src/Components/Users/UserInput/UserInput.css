@@ -1,0 +1,12 @@
+.input {
+    margin: 5rem auto ;
+}
+
+.input label {
+    display: block;
+    font-weight: bold;
+}
+
+.input input {
+    width: 100%;
+}
