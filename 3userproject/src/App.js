@@ -21,7 +21,7 @@ function App() {
     setUser( prevUser => {
       const newUserArray = prevUser.filter(userItem => userItem.id !== userID);
       return newUserArray;
-    }); 
+    });
   };
 
   return (

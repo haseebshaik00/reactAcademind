@@ -17,7 +17,11 @@ const UserInput = (props) => {
             name: name,
             age: age
         }
+        if(name.trim().length === 0 || age.trim().length === 0)
+            return;
         props.onSubmitForm(newUser);
+        setName('');
+        setAge('');
     }
 
     return(
