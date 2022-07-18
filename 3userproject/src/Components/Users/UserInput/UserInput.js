@@ -1,5 +1,6 @@
-import Card from '../../UI/Card'
-import './UserInput.css'
+import Card from '../../UI/Card';
+import Button from '../../UI/Button';
+import './UserInput.css';
 import { useState } from "react";
 
 const UserInput = (props) => {
@@ -26,7 +27,7 @@ const UserInput = (props) => {
                         <input type="text" value={name} onChange={onChangeName}/><br /><br />
                         <label>Age : </label>
                         <input type="number" value={age} onChange={onChangeAge}/><br /><br />
-                        <button type="submit">SUBMIT</button>
+                        <Button type='submit'>SUBMIT</Button>
                     </form>
             </Card>
 
