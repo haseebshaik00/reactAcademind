@@ -25,10 +25,10 @@ function App() {
   };
 
   return (
-    <div>
+    <React.Fragment>
         <UserInput onSubmitForm={onSubmitForm} />
         <UserList users={user} onDeleteItem={onDeleteItem} />
-    </div>
+    </React.Fragment>
   );
 }
 
